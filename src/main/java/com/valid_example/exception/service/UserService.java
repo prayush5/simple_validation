@@ -34,4 +34,14 @@ public class UserService {
            throw new UserNotFoundException("User not found with id " + id);
        }
     }
+
+    public User deleteUser(int id) throws UserNotFoundException{
+        User user = userRepository.findByUserId(id);
+        if (user!=null){
+            userRepository.deleteById(id);
+        }else {
+            throw new UserNotFoundException("User not found with id " + id);
+        }
+        return user;
+    }
 }

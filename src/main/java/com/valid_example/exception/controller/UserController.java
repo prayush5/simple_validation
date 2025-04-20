@@ -32,4 +32,10 @@ public class UserController {
     public ResponseEntity<User> getUser(@PathVariable int id) throws UserNotFoundException {
         return ResponseEntity.ok(userService.getUser(id));
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteUser(@PathVariable int id) throws UserNotFoundException{
+        userService.deleteUser(id);
+        return ResponseEntity.ok("User with id " + id + " has been deleted");
+    }
 }

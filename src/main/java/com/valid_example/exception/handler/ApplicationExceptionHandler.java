@@ -1,4 +1,4 @@
-package com.valid_example.exception.advice;
+package com.valid_example.exception.handler;
 
 import com.valid_example.exception.exception.UserNotFoundException;
 import org.springframework.http.HttpStatus;
